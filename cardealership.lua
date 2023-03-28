@@ -45,9 +45,8 @@ RegisterCommand("buycar", function(source, args, rawCommand)
         return
     end
     -- Spilleren har råd og har ikke allerede en bil, så lad dem købe bilen
-    local seller = GetPlayerFromServerId(NetworkGetEntityOwner(NetworkGetEntityFromNetworkId(GetVehicleNetworkId(plate))))
+ local seller = GetPlayerFromServerId(NetworkGetEntityOwner(NetworkGetEntityFromNetworkId(GetVehicleNetworkId(plate))))
     TriggerClientEvent("chatMessage", seller, "^2Salg: ^7Bilen med nummerplade " .. plate .. " er blevet solgt til " .. GetPlayerName(source) .. " for " .. price .. " kr.")
     TriggerClientEvent("chatMessage", source, "^2Succes: ^7Du har købt bilen med nummerplade " .. plate .. " for " .. price .. " kr.")
     carsForSale[plate] = nil -- Fjern bilen fra listen over biler til salg
-    end
-end)
+    end)
