@@ -50,4 +50,5 @@ RegisterCommand("buycar", function(source, args, rawCommand)
     TriggerClientEvent("chatMessage", source, "^2Succes: ^7Du har købt bilen med nummerplade " .. plate .. " for " .. price .. " kr.")
     carsForSale[plate] = nil -- Fjern bilen fra listen over biler til salg
     TriggerEvent("esx_addonaccount:getSharedAccount", "society_mechanic", function(account)
-        account:addMoney(price) --
+        account:addMoney(price) 
+    end
